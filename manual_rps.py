@@ -29,3 +29,11 @@ def get_winner(computer_choice, user_choice):
         print('You lost!')
     elif computer_choice == 'Scissors' and user_choice == 'Rock':
         print('You won!')
+
+
+def play():
+    
+    computer_choice = get_computer_choice()
+    user_choice = get_user_choice()
+
+    get_winner(computer_choice,user_choice)
