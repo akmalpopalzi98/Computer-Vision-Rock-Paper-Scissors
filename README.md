@@ -9,6 +9,9 @@
 ### Task 1: Before continuing with the rest of the project, a major prequisite was to install packages for mac computers in a virtual environment called tensorflow-env. Once the new env and its packages were ready, the exported model script from task 1 was run in a jupyter notebook within the tensorflow-env environment.
 
 
+![image](https://user-images.githubusercontent.com/105284469/213459194-a1845808-6a0e-4007-bb8d-714b0d07350c.png)
+
+
 ## 3. Computer Vision Milestone 4: Creating a rock, paper and scissors game
 
 ### Task 1: two new functions were made to build the foundations for the rps game. The first function {get_computer_choice} would pick a random choice between rock, paper and scissors and return the choice. The second function {get_user_choice} prompts the user to enter rock, paper or scissors and then return the user choice.
