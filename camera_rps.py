@@ -1,12 +1,15 @@
 import cv2
 from keras.models import load_model
 import numpy as np
+import time
 
 
 def get_prediction():
     model = load_model('keras_model.h5')
     cap = cv2.VideoCapture(0)
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
+    time_1 = time.time()
+
 
     while True: 
         ret, frame = cap.read()
@@ -17,8 +20,11 @@ def get_prediction():
         prediction = model.predict(data)
         cv2.imshow('frame', frame)
         # Press q to close the window
-        print(prediction)
+        #print(prediction)
+        time_2 = time.time()
         if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+        elif time_2 -time_1 > 3:
             break
             
     # After the loop release the cap object
