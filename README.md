@@ -1,24 +1,46 @@
-## 1. Computer Vision Milestone 2: Creating a system that detects whether the user is showing rock, paper or scissors to a camera
+Computer Vision Rock-Paper-Scissors
 
+This projects implements the Rock-Paper-Scissors game, where the user plays with the computer using computer vision.
 
-### Task1: In this milestone, a computer vision model was trained on a dataset featuring images of rock, paper, scissors and the nothing class. Each class contained approximately 800+ examples to allow the model to have a better generalization accuracy when making predictions. After the model was trained, it was exported into a keras.h5 file and stored so that it can be later implemented into a python application in the other milestones.
+To play the game, run the play_rps function in the file play_rock_paper_scissors.py. A webcam window will appear on a three second timer, to which the user shows a hand gesture representing rock, paper, or scissors. The game will continue until either the user or the computer has won three rounds.
+Project Documentation
 
+This project uses the web application TeachableMachine to train a deep learning model to recognise whether the user is displaying to the webcam rock, paper, or scissors, and executes the logic for a best-of-three game between user and computer.
+Milestone 1: Creation of the Computer Vision System
 
-## 2. Computer Vision Milestone 3: Installing dependencies for mac OS
+Technologies / Skills:
 
-### Task 1: Before continuing with the rest of the project, a major prequisite was to install packages for mac computers in a virtual environment called tensorflow-env. Once the new env and its packages were ready, the exported model script from task 1 was run in a jupyter notebook within the tensorflow-env environment.
+    Teachable Machine
 
+Web application Teachable Machine is used for creating machine learning models based on image or audio files. A model to recognise the three classes of the game (Rock, Paper, and Scissors), as well as a 'Nothing' class, was trained and imported. The model is contained in the keras_model.h5 file, with the class labels shown in the labels.txt file.
+Milestone 2: Install the Dependencies
+
+Technologies / Skills:
+
+    Pip
+    Conda virtual environments
+
+Requisite packages installed into a new conda virtual environment, see requirements.txt for detailed list of dependencies.
+Milestone 3: Create a Rock-Paper-Scissors Game
+
+Manual version of the rock-paper-scissors game created in the python file manual_rps.py. The get_computer_input function randomly chooses "rock", "paper", or "scissors", the get_user_input function asks the user for a choice from the same options, and the get_winner functions returns the winner according to the rules of the game. The play function runs the game as expected by calling the previous three functions sequentially. This game is contained in the manual_rps.py file.
+Milestone 4: Use the Camera to Play Rock-Paper-Scissors
+
+Technologies / Skills:
+
+    opencv-python
+    keras
+    mediapipe
+
+The get_user_input function from the manual game is replaced by a get_prediction function which uses keras as an interface for the TensorFlow library to predict whether the user is displaying rock, paper, or scissors in the camera.
+
+Addition funtions displaying the framerate and countdown timer were added, along with a hand tracking visualisation using the Google mediapipe model (see https://google.github.io/mediapipe/solutions/hands for details).
+
+The play_rock_paper_scissors.py file consolidates the code in a RockPaperScissors class and runs the game with the function play_rps.
 
 ![image](https://user-images.githubusercontent.com/105284469/213459194-a1845808-6a0e-4007-bb8d-714b0d07350c.png)
 
 
-## 3. Computer Vision Milestone 4: Creating a rock, paper and scissors game
-
-### Task 1: two new functions were made to build the foundations for the rps game. The first function {get_computer_choice} would pick a random choice between rock, paper and scissors and return the choice. The second function {get_user_choice} prompts the user to enter rock, paper or scissors and then return the user choice.
-
-### Task 2: The two functions from task 1 were wrapped within another function called get_winner. This function takes two arg; computer_choice and user_choice. Using a series of if and elif statements, the function would return the winner based on the choice made by the computer and the user.
-
-### Task 3: Now that the foundations for the rps game have been build, all the preceding functions are now put together under one function called play. Within this function the get_user_choice and get_computer_choice are called and passed onto the get_winner function, which then prints out the winner. When the {play()} function is run, the game should automatically begin by asking the user to pick between rock, paper and scissors. This input is then compared with the value returned from get_user_choice using the get_winner function. The game then prints out 'you won' if the user wins, 'you tied' if the user ties, and finall, 'you lose' if the user loses.
 
 
 
